@@ -1,0 +1,36 @@
+#include <Relay.h>
+int relay1= 1;
+int relay2= 2;
+int relay3= 3;
+char kode;
+
+void setup() {
+ // put your setup code here, to run once:
+pinMode(relay1, OUTPUT);
+pinMode(relay2, OUTPUT);
+pinMode(relay3, OUTPUT);
+digitalWrite(relay1, HIGH);
+digitalWrite(relay2, HIGH);
+digitalWrite(relay3, HIGH);
+serial.begin(9600);
+}
+
+void loop() {
+ // put your main code here, to run repeatedly
+if(Serial.avaible()) {
+ kode= Serial.read();
+}
+if(kode == '1'){
+ digitalWrite(relay1, LOW;}
+else if(kode == '2'){
+ digitalWrite(relay2, LOW;}
+else if(kode == '3'){
+ digitalWrite(relay3, LOW;}
+
+else if(kode == 'A'){
+ digitalWrite(relay1, HIGH;}
+else if(kode == 'B'){
+ digitalWrite(relay2, HIGH;}
+else if(kode == 'C'){
+ digitalWrite(relay3, HIGH;}
+}
